@@ -66,3 +66,44 @@ Route::get('/consultas/login', function (Request $request){
     }
 });
 
+Route::get('/email', function (Request $request){
+    $consulta = new App\Consultas;
+    $consulta = DB::table("usuarios")->where('email', $request->input("email"))->first();
+
+    if ($consulta != null) {
+        // Varios destinatarios
+        $para  = $request->input("email");
+
+        // título
+        $título = 'Recuperación de contraseña';
+
+        // mensaje
+        $mensaje = '
+        <html>
+        <head>
+        <title>Recuperación de contraseña</title>
+        </head>
+        <body>
+        <p>
+        Recupera tu acceso
+
+        Sigue este enlace para recuperar tu contraseña: 
+        </p>
+        
+        </body>
+        </html>
+        ';
+
+        // Para enviar un correo HTML, debe establecerse la cabecera Content-type
+        $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+        $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+
+        // Enviarlo
+        mail($para, $título, $mensaje, $cabeceras);
+
+        echo "success";
+    }
+    else {
+        echo "null";
+    }
+});
