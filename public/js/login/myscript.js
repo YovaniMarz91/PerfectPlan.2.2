@@ -1,3 +1,14 @@
+function generateRandomString(num) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result1 = ' ';
+  const charactersLength = characters.length;
+  for (let i = 0; i < num; i++) {
+    result1 += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  return result1;
+}
+
 var app = new Vue({
   el: '#app',
   data: {
@@ -55,11 +66,13 @@ var app2 = new Vue({
   },
   methods: {
     sendEmail: function() {
+      let code = generateRandomString(10);
+
       // Simple POST request with a JSON body using fetch
-      fetch(`email?email=${this.email}`, { credentials: 'same-origin' })
+      fetch(`email?email=${this.email}&code=${code}`, { credentials: 'same-origin' })
         .then(data => {
           if (data == null) {
-            alertify.error("El email o contraseña no existen.");
+            alertify.error("El email no existe.");
           }
           else {
             alertify.success("Mensaje de recuperación enviado con exito");

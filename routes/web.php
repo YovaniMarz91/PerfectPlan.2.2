@@ -69,6 +69,7 @@ Route::get('/consultas/login', function (Request $request){
 Route::get('/email', function (Request $request){
     $consulta = new App\Consultas;
     $consulta = DB::table("usuarios")->where('email', $request->input("email"))->first();
+    $code = $request->input("code");
 
     if ($consulta != null) {
         // Varios destinatarios
@@ -85,9 +86,7 @@ Route::get('/email', function (Request $request){
         </head>
         <body>
         <p>
-        Recupera tu acceso
-
-        Sigue este enlace para recuperar tu contraseña: 
+        Recupera tu acceso. Sigue este enlace para recuperar tu contraseña: ' . URL::to('/login/restore?code=') . $code . '
         </p>
         
         </body>
