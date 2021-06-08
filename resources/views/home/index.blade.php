@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Elate &mdash; 100% Free Fully Responsive HTML5 Template</title>
+	<title>Perfect &mdash; Plan</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -248,6 +248,16 @@
 						<i class="fh5co-intro-icon icon-users"></i>
 						<h2>Iniciar Sesion </h2>
 						<p>Siguen haciendo planes con amigos y disfrutando de una excelente experiencia</p>
+						<p><a href="login/" class="btn btn-primary">Iniciar </a></p>
+					</div>
+				</div>
+				<div class="fh5co-block to-animate" style="background-image: url(images/s1.jpg);">
+					<div class="overlay-darker"></div>
+					<div class="overlay"></div>
+					<div class="fh5co-text">
+						<i class="fh5co-intro-icon icon-users"></i>
+						<h2>Inicio Sesion Cliente </h2>
+						<p>Mejora la interacion y comunicacion con los ususarios                         </p>
 						<p><a href="login/" class="btn btn-primary">Iniciar </a></p>
 					</div>
 				</div>
