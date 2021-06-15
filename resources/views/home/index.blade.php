@@ -251,7 +251,7 @@
 						<p><a href="login/" class="btn btn-primary">Iniciar </a></p>
 					</div>
 				</div>
-				<div class="fh5co-block to-animate" style="background-image: url(images/s1.jpg);">
+				<div class="fh5co-block to-animate" style="background-image: url(images/img_8.jpg);">
 					<div class="overlay-darker"></div>
 					<div class="overlay"></div>
 					<div class="fh5co-text">
